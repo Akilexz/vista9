@@ -1,0 +1,30 @@
+<body>
+  <div *ngFor="let item of respuesta_gestion">
+    <h1>{{item.tituloCronograma}}</h1>
+  </div>
+  <div class="align" *ngFor="let item of respuesta">
+    <div class="logo">
+      <img src="../../../assets/img/person-logueo.jpg" alt="">
+    </div>
+    <div class="container">
+      <div class="tabla">
+        <div class="titulo">
+          <h2>{{item.nombres}}</h2>
+        </div>
+        <div class="descripcion">
+          <ul>
+            <li>{{item.tema}}</li>
+            <li>{{item.resumen}}</li>
+            <li>{{item.email}}</li>
+            <li>Fecha</li>
+            <li>Hora</li>
+            <li>Sede</li>
+          </ul>
+        </div>
+        <div class="link">
+          <a (click)="cambiar()">Asistir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

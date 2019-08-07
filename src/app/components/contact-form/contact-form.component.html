@@ -1,0 +1,24 @@
+<body>
+  <div class="contact-title">
+    <h1>CONTÁCTANOS</h1>
+  </div>
+
+
+  <div class="contact-form">
+    <form action="">
+      <input type="text" class="form-control" placeholder="Nombre" required><br>
+      <input type="email" class="form-control" placeholder="Correo Electrónico" required><br>
+      <textarea placeholder="Mensaje" cols="81" rows="8" required></textarea><br>
+
+      <input type="submit" class="form-control submit" value="ENVIAR MENSAJE">
+    </form>
+  </div>
+
+  <div class="contact">
+    <ul *ngFor="let item of respuesta_gestion">
+      <li>Teléfono: <a href="#">{{item.telefono}}</a></li>
+      <li>Correo1: <a href="#">{{item.correoUno}}</a></li>
+      <li>Correo2: <a href="#">{{item.correoDos}}</a></li>
+    </ul>
+  </div>
+</body>

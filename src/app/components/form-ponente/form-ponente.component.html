@@ -1,0 +1,47 @@
+<body>
+  <app-header></app-header>
+  <div class="form">
+    <img src="../../assets/img/logo-yavirac.png" class="avatar">
+    <h2>Inscripción Ponente</h2>
+    <form action="">
+
+      <div class="left">
+        <p>Cédula</p>
+        <input type="number" [(ngModel)]="ponente.id" name="id" id="id" placeholder="Ingrese su cédula"
+          pattern="^[0-9]+">
+        <p>Nombres</p>
+        <input type="text" [(ngModel)]="ponente.nombres" name="nombres" id="nombres"
+          placeholder="Ingrese sus dos nombres">
+        <p>Apellidos</p>
+        <input type="text" [(ngModel)]="ponente.apellidos" name="apellidos" id="apellidos"
+          placeholder="Ingrese sus dos apellidos">
+        <p>Correo Electrónico</p>
+        <input type="email" [(ngModel)]="ponente.email" name="email" id="email"
+          placeholder="Ingrese su correo electrónico">
+      </div>
+
+      <div class="right">
+        <p>Categoría</p>
+        <div class="caja">
+          <select [(ngModel)]="ponente.categoria" name="categoria" id="categoria">
+            <option value="" disabled>Seleccione...</option>
+            <option value="">Tecnológico</option>
+            <option value="">Científico</option>
+            <option value="">Social</option>
+            <option value="">Economico</option>
+          </select>
+        </div>
+        <p>Tema</p>
+        <input type="text" [(ngModel)]="ponente.tema" name="tema" id="tema" placeholder="Ingrese el tema">
+        <p>Resumen</p>
+        <textarea [(ngModel)]="ponente.resumen" name="resumen" id="resumen" cols="64" rows="3"></textarea>
+        <p>Institución</p>
+        <input type="text" [(ngModel)]="ponente.institucion" name="institucion" id="institucion"
+          placeholder="Acerca de usted">
+      </div>
+      <input type="submit" value="Enviar" (click)="postData()">
+      <a href="home">Cancelar</a>
+
+    </form>
+  </div>
+</body>

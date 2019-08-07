@@ -1,0 +1,22 @@
+<body>
+  <app-header></app-header>
+  <div class="form">
+    <img src="../../assets/img/logo-yavirac.png" class="avatar">
+    <h2>Inscripción Asistente</h2>
+    <form action="">
+      <p>Cédula</p>
+      <input type="number" [(ngModel)]="asistente.id" name="id" id="id" placeholder="Ingrese sus dos nombres">
+      <p>Nombres</p>
+      <input type="text" [(ngModel)]="asistente.nombres" name="nombres" id="nombres"
+        placeholder="Ingrese sus dos nombres">
+      <p>Apellidos</p>
+      <input type="text" [(ngModel)]="asistente.apellidos" name="apellidos" id="apellidos"
+        placeholder="Ingrese sus dos apellidos">
+      <p>Correo Electrónico</p>
+      <input type="email" [(ngModel)]="asistente.email" name="email" id="email"
+        placeholder="Ingrese su correo electrónico">
+      <input type="submit" value="Enviar" (click)="editData()">
+      <a href="home">Cancelar</a>
+    </form>
+  </div>
+</body>

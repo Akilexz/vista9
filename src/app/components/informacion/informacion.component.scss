@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body:before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../assets/img/info.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-filter: blur(3 px);
+  -moz-filter: blur(3px);
+  z-index: -1;
+} 
+
+.left {
+  position: absolute;
+  top: 115px;
+  left: 36%;
+  background-color: rgba(141, 181, 241, 0.774);
+  width: 300px;
+  height: 300px;
+  // margin: 190px 0px;
+  // margin-left: 250px;
+  padding: 50px;
+}

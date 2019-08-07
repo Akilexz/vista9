@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body:before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../../assets/img/fondo-yavirac.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+}
+
+.form {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 930px;
+  padding: 10px 60px;
+  background: #00000099;
+  margin-bottom: 30px;
+
+  .avatar {
+    position: absolute;
+    width: 200px;
+    height: 144px;
+    // border-radius: 50%;
+    overflow: hidden;
+    top: calc(50px/2);
+    left: 30%;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 178px 0 45px 0;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  input[type=email],
+  input[type=password],
+  input[type=text] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  input[type=submit] {
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: red;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .caja {
+    margin: 15px auto 15px auto;
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
+    select {
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      height: 30px;
+      padding: 5px;
+      width: 97%;
+      color: #fff;
+
+      option {
+        color: #000;
+        background-color: rgb(185, 185, 185);
+      }
+    }
+
+    select:focus {
+      outline: none;
+    }
+
+    .caja::after {
+      content: "\025be";
+      display: table-cell;
+      padding-top: 7px;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+      background-color: #d9d9d9;
+      position: absolute;
+      top: 0;
+      right: 0px;
+      pointer-events: none;
+    }
+  }
+}

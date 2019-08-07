@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body:before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  // background-image: url("../../../assets/img/slider-2.jpg");
+  background: linear-gradient(#0000008f, #00000080), url('../../../assets/img/fondo-yavirac.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  //   -webkit-filter: blur(3px);
+  //   -moz-filter: blur(3px);
+  z-index: -1;
+}
+
+.contact-title {
+  text-align: center;
+  padding-top: 100px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 4s ease-in-out;
+
+  h1 {
+    font-size: 32px;
+    line-height: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.contact-form {
+  float: left;
+  margin: 80px 0 0 60px;
+
+  form {
+    margin-top: 50px;
+    transition: all 4s ease-in-out;
+
+    .form-control {
+      width: 600px;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    input {
+      height: 45px;
+    }
+
+    textarea{
+      border-radius: 12px;
+      outline: none;
+    }
+
+
+    .submit {
+      background-color: #316593;
+      border-color: transparent;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      height: 50px;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: #fff;
+        color: #316593;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+.contact {
+  float: left;
+  margin: 120px 0 0 250px;
+
+  ul {
+    list-style: none;
+    text-align: left;
+
+    li {
+      font-size: 30px;
+      color: #fff;
+    }
+
+    li a {
+      font-size: 30px;
+      display: inline-block;
+      padding: 23px 20px;
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+    }
+  }
+}
