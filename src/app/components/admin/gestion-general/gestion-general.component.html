@@ -2,105 +2,103 @@
 <hr>
 <hr>
 <form action="">
-  <h2>******HOME******</h2>
-  <label for="">Código</label><br>
-  <input type="number" [(ngModel)]="gestion.id" name="id" id="id">
-  <label for="">Titulo Congreso</label><br>
-  <textarea [(ngModel)]="gestion.tituloCongreso" name="tituloCongreso" id="tituloCongreso" cols="50" rows="3"></textarea><br>
-  <label for="">Direccion Correo</label><br>
-  <textarea [(ngModel)]="gestion.direccionCorreo" name="direccionCorreo" id="direccionCorreo" cols="50" rows="3"></textarea><br>
-  <label for="">PaginaWeb</label><br>
-  <textarea [(ngModel)]="gestion.paginaWeb" name="paginaWeb" id="paginaWeb" cols="50" rows="3"></textarea><br>
-  <h2>******INFORMACION*******</h2><br>
-  <textarea [(ngModel)]="gestion.informacion" name="informacion" id="informacion" cols="50" rows="3"></textarea><br>
-  <h2>******CRONOGRAMA********</h2><br>
-  <label for="">Titulo</label><br>
-  <textarea [(ngModel)]="gestion.tituloCronograma" name="tituloCronograma" id="tituloCronograma" cols="50" rows="3"></textarea><br>
-  <h2>******CONTAC-FORM*******</h2><br>
-  <label for="">Teléfono</label><br>
-  <textarea [(ngModel)]="gestion.telefono" name="telefono" id="telefono" cols="50" rows="3"></textarea><br>
-  <label for="">Correo1</label><br>
-  <textarea [(ngModel)]="gestion.correoUno" name="correoUno" id="correoUno" cols="50" rows="3"></textarea><br>
-  <label for="">Correo2</label><br>
-  <textarea [(ngModel)]="gestion.correoDos" name="correoDos" id="correoDos" cols="50" rows="3"></textarea><br>
-  <input type="submit" value="Enviar" (click)="postDataGestion()">
+    <h2>******HOME******</h2>
+    <label for="">Código</label><br>
+    <input type="number" [(ngModel)]="gestion.id" name="id" id="id">
+    <label for="">Titulo Congreso</label><br>
+    <textarea [(ngModel)]="gestion.tituloCongreso" name="tituloCongreso" id="tituloCongreso" cols="50" rows="3"></textarea><br>
+    <label for="">Direccion Correo</label><br>
+    <textarea [(ngModel)]="gestion.direccionCorreo" name="direccionCorreo" id="direccionCorreo" cols="50" rows="3"></textarea><br>
+    <label for="">PaginaWeb</label><br>
+    <textarea [(ngModel)]="gestion.paginaWeb" name="paginaWeb" id="paginaWeb" cols="50" rows="3"></textarea><br>
+    <h2>******INFORMACION*******</h2><br>
+    <textarea [(ngModel)]="gestion.informacion" name="informacion" id="informacion" cols="50" rows="3"></textarea><br>
+    <h2>******CRONOGRAMA********</h2><br>
+    <label for="">Titulo</label><br>
+    <textarea [(ngModel)]="gestion.tituloCronograma" name="tituloCronograma" id="tituloCronograma" cols="50" rows="3"></textarea><br>
+    <h2>******CONTAC-FORM*******</h2><br>
+    <label for="">Teléfono</label><br>
+    <textarea [(ngModel)]="gestion.telefono" name="telefono" id="telefono" cols="50" rows="3"></textarea><br>
+    <label for="">Correo1</label><br>
+    <textarea [(ngModel)]="gestion.correoUno" name="correoUno" id="correoUno" cols="50" rows="3"></textarea><br>
+    <label for="">Correo2</label><br>
+    <textarea [(ngModel)]="gestion.correoDos" name="correoDos" id="correoDos" cols="50" rows="3"></textarea><br>
+    <input type="submit" value="Enviar" (click)="postDataGestion()">
 </form>
 <hr>
 <hr>
-<!-- <div>
-  <div>
+<div>
+    <label>id</label>
+    <input type="number" [(ngModel)]="imagen.id">
     <label>imagen</label>
     <input type="file" (change)="handleFileSelect($event)" [(ngModel)]="imagen" name="imagen">
-  </div>
-  <button type="button" (click)="addImage()">Enviar</button>
-</div> -->
+</div>
+<button type="button" (click)="addImage(imagen.id)">Enviar</button>
 
 <div class="container" id="pdf">
-  <div class="forms">
-    <div class="div">
-      <h2>Ponentes</h2>
-      <table>
-        <thead *ngFor="let item of table_ponentes">
-          <th>{{item.id}}</th>
-          <th>{{item.nombres}}</th>
-          <th>{{item.apellidos}}</th>
-          <th>{{item.email}}</th>
-          <th>{{item.categoria}}</th>
-          <th>{{item.tema}}</th>
-          <th>{{item.resumen}}</th>
-          <th>{{item.institucion}}</th>
-          <th></th>
-          <th></th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of respuesta_ponentes">
-            <td>{{item.id}}</td>
-            <td>{{item.nombres}}</td>
-            <td>{{item.apellidos}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.categoria}}</td>
-            <td>{{item.tema}}</td>
-            <td>{{item.resumen}}</td>
-            <td>{{item.institucion}}</td>
-            <td>
-              <button value="Editar" title="Actualizar" class="form-control"
-                (click)="editarPonente(item.id)">Editar</button>
-            </td>
-            <td>
-              <button value="Eliminar" title="Eliminar" class="form-control"
-                (click)="borrarPonente(item.id)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="forms">
+        <div class="div">
+            <h2>Ponentes</h2>
+            <table>
+                <thead *ngFor="let item of table_ponentes">
+                    <th>{{item.id}}</th>
+                    <th>{{item.nombres}}</th>
+                    <th>{{item.apellidos}}</th>
+                    <th>{{item.email}}</th>
+                    <th>{{item.categoria}}</th>
+                    <th>{{item.tema}}</th>
+                    <th>{{item.resumen}}</th>
+                    <th>{{item.institucion}}</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of respuesta_ponentes">
+                        <td>{{item.id}}</td>
+                        <td>{{item.nombres}}</td>
+                        <td>{{item.apellidos}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.categoria}}</td>
+                        <td>{{item.tema}}</td>
+                        <td>{{item.resumen}}</td>
+                        <td>{{item.institucion}}</td>
+                        <td>
+                            <button value="Editar" title="Actualizar" class="form-control" (click)="editarPonente(item.id)">Editar</button>
+                        </td>
+                        <td>
+                            <button value="Eliminar" title="Eliminar" class="form-control" (click)="borrarPonente(item.id)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="div">
-      <h2>Asistentes</h2>
-      <table>
-        <thead *ngFor="let item of table_asistentes">
-          <th>{{item.nombres}}</th>
-          <th>{{item.apellidos}}</th>
-          <th>{{item.email}}</th>
-          <th></th>
-          <th></th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of respuesta_asistentes">
-            <td>{{item.nombres}}</td>
-            <td>{{item.apellidos}}</td>
-            <td>{{item.email}}</td>
-            <td>
-              <button value="Editar" title="Actualizar" class="form-control" (click)="editarAsistente(item.id)">editar</button>
-            </td>
-            <td>
-              <button value="Eliminar" title="Eliminar" class="form-control" (click)="borrarAsistente(item.id)"> borrar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="div">
+            <h2>Asistentes</h2>
+            <table>
+                <thead *ngFor="let item of table_asistentes">
+                    <th>{{item.nombres}}</th>
+                    <th>{{item.apellidos}}</th>
+                    <th>{{item.email}}</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of respuesta_asistentes">
+                        <td>{{item.nombres}}</td>
+                        <td>{{item.apellidos}}</td>
+                        <td>{{item.email}}</td>
+                        <td>
+                            <button value="Editar" title="Actualizar" class="form-control" (click)="editarAsistente(item.id)">editar</button>
+                        </td>
+                        <td>
+                            <button value="Eliminar" title="Eliminar" class="form-control" (click)="borrarAsistente(item.id)"> borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
 </div>
 
-<button type="button" (click)="crearPDF()" >Generar PDF</button>
+<button type="button" (click)="crearPDF()">Generar PDF</button>

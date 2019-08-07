@@ -1,22 +1,21 @@
 <body>
-  <app-header></app-header>
-  <div class="form">
-    <img src="../../assets/img/logo-yavirac.png" class="avatar">
-    <h2>Inscripción Asistente</h2>
-    <form action="">
-      <p>Cédula</p>
-      <input type="number" [(ngModel)]="asistente.id" name="id" id="id" placeholder="Ingrese sus dos nombres">
-      <p>Nombres</p>
-      <input type="text" [(ngModel)]="asistente.nombres" name="nombres" id="nombres"
-        placeholder="Ingrese sus dos nombres">
-      <p>Apellidos</p>
-      <input type="text" [(ngModel)]="asistente.apellidos" name="apellidos" id="apellidos"
-        placeholder="Ingrese sus dos apellidos">
-      <p>Correo Electrónico</p>
-      <input type="email" [(ngModel)]="asistente.email" name="email" id="email"
-        placeholder="Ingrese su correo electrónico">
-      <input type="submit" value="Enviar" (click)="editData()">
-      <a href="home">Cancelar</a>
-    </form>
-  </div>
+    <app-header></app-header>
+    <div class="form">
+        <img src="../../assets/img/logo-yavirac.png" class="avatar">
+        <h2>Inscripción Asistente</h2>
+        <form [formGroup]="editarFormAsis">
+            <div *ngFor="let item of respuesta">
+                <!-- <p>Cédula</p>
+              <input type="number" value="{{item.id}}" name="id" id="id" placeholder="Ingrese sus dos nombres"> -->
+                <p>Nombres</p>
+                <input formControlName="nombres" type="text" [(ngModel)]="item.nombres" name="nombres" id="nombres" placeholder="Ingrese sus dos nombres">
+                <p>Apellidos</p>
+                <input formControlName="apellidos" type="text" [(ngModel)]="item.apellidos" name="apellidos" id="apellidos" placeholder="Ingrese sus dos apellidos">
+                <p>Correo Electrónico</p>
+                <input formControlName="email" type="email" [(ngModel)]="item.email" name="email" id="email" placeholder="Ingrese su correo electrónico">
+                <input type="submit" value="Enviar" (click)="editData(item.id)">
+                <a href="home">Cancelar</a>
+            </div>
+        </form>
+    </div>
 </body>

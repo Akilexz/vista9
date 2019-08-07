@@ -1,3 +1,4 @@
-export class Images{
-    nombre: string
+export class Images {
+  id: number;
+    // nombre: string
 }

@@ -17,32 +17,21 @@ export class EditarPonenteComponent implements OnInit {
   ponente: Ponentes;
   respuesta: any[];
   editarForm: FormGroup;
-  nombres:string;
-  apellidos:string;
-  email:string;
-  categoria:string;
-  tema:string;
-  resumen:string;
-  institucion:string;
+  nombres: string;
+  apellidos: string;
+  email: string;
+  categoria: string;
+  tema: string;
+  resumen: string;
+  institucion: string;
 
   constructor(private http: HttpClient, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.tabla = 'ponentes';
     this.actualizar();
     this.formularioEdit();
   }
-
-  actualizar() {
-    const id = localStorage.getItem('id');
-    const tabla = 'ponentes';
-    this.http.get<any>(environment.API_URL + `routebyid?tabla=${tabla}&id=` + id).subscribe(data => {
-      this.respuesta = data.datos;
-      console.log(this.respuesta);
-      console.log(id);
-      console.log(data);
-    });
-  }
-
   formularioEdit() {
     this.editarForm = this.fb.group({
       nombres: ['', [Validators.required]],
@@ -56,6 +45,7 @@ export class EditarPonenteComponent implements OnInit {
   }
 
   editData = (id) => {
+    console.log (id);
     const nombres = this.editarForm.get('nombres').value;
     const apellidos = this.editarForm.get('apellidos').value;
     const email = this.editarForm.get('email').value;
@@ -64,7 +54,7 @@ export class EditarPonenteComponent implements OnInit {
     const resumen = this.editarForm.get('resumen').value;
     const institucion = this.editarForm.get('institucion').value;
     this.data = {
-      tabla: 'ponentes',
+      tabla: this.tabla,
       datoId: [{
         id: id,
         nombres: nombres,
@@ -77,15 +67,26 @@ export class EditarPonenteComponent implements OnInit {
       }]
     };
     if (this.data === null) {
-      console.log('no gracias');
+      console.log('datos no encontrados');
     } else {
-      console.log(this.data)
+      console.log(this.data);
       this.http.put(environment.API_URL + 'put', this.data).subscribe(resultado => {
         console.log(resultado);
         alert('datos editados');
-        this.router.navigate(['cronograma']);
+        this.router.navigate(['gestion']);
       });
     }
   }
-
+  actualizar() {
+    const id = localStorage.getItem('id');
+    console.log(localStorage);
+    const tabla = 'ponentes';
+    this.http.get<any>(environment.API_URL + `routebyid?tabla=${tabla}&id=` + id).subscribe(data => {
+      this.respuesta = data.datos;
+      console.log(this.respuesta);
+      console.log(id);
+      console.log(data);
+    });
+  }
 }
+

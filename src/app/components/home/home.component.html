@@ -1,16 +1,16 @@
 <body>
-  <app-header></app-header>
-  <div *ngFor="let item of respuesta_gestion">
-    <h1>{{item.tituloCongreso}}</h1>
-    <div class="content">
-      <img src="../../../assets/img/logo-yavirac.png" alt="">
-    </div>
-    <div class="links">
-      <!-- <div *ngFor="let item of respuesta">
+    <app-header></app-header>
+    <div *ngFor="let item of respuesta_gestion">
+        <h1>{{item.tituloCongreso}}</h1>
+        <div class="content">
+            <img src="../../../assets/img/logo-yavirac.png" alt="">
+        </div>
+        <div class="links">
+            <!-- <div *ngFor="let item of respuesta">
         <img src="data:image/jpg;base64,{{item.nombre}}" width="100px" height="100px">
       </div> -->
-      <p><a href="#">{{item.direccionCorreo}}</a></p>
-      <p><a href="#">{{item.paginaWeb}}</a></p>
+            <p><a href="#">{{item.direccionCorreo}}</a></p>
+            <p><a href="#">{{item.paginaWeb}}</a></p>
+        </div>
     </div>
-  </div>
 </body>

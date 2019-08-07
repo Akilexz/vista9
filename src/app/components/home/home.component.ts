@@ -21,29 +21,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData()
+    this.getData();
   }
 
-  getData = () => {
-    const tabla = 'images';
-    this.http.get<any>(environment.API_URL + `get?tabla=${tabla}`).subscribe(data => {
-      this.respuesta = data.datos;
-      console.log(this.respuesta);
-      this.imagen = this.respuesta
-    });
-    
-    const tablaImagen = 'images'
-    this.http.get<any>(environment.API_URL + `get?tabla=${tablaImagen}`).subscribe(data => {
-      this.respuesta_imagenes = data.datos;
-      console.log(this.respuesta_imagenes);
-    });
-
-    const tablaGestion = 'gestion'
-    this.http.get<any>(environment.API_URL + `get?tabla=${tablaGestion}`).subscribe(data => {
-      this.respuesta_gestion = data.datos;
-      console.log(this.respuesta_gestion);
-    });
+    getData = () => {
+      const tabla = 'imagenesprueba';
+      this.http.get<any>(environment.API_URL + `getorderbyid?tabla=${tabla}`).subscribe(data => {
+        this.respuesta = data.datos;
+        console.log(this.respuesta);
+      });
+    }
   }
-
-
-}

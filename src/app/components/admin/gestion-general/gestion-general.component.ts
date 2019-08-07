@@ -8,6 +8,7 @@ import { Gestion } from 'src/app/models/gestionParametros';
 import { DomSanitizer } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import jsPDF from 'jspdf';
+import { Images } from 'src/app/models/images';
 
 @Component({
   selector: 'app-gestion-general',
@@ -35,7 +36,7 @@ export class GestionGeneralComponent implements OnInit {
   table_asistentes: any[];
   respuesta_asistentes: any[];
 
-
+  imagen: Images;
   /*======================== GESTION PARAMETROS =======================*/
 
   dataGestion: any
@@ -106,7 +107,9 @@ export class GestionGeneralComponent implements OnInit {
     this.tablaGestion = 'gestion';
 
     /*======================== FIN GESTION PARAMETROS =======================*/
-
+    this.imagen = {
+      id: 2
+    };
   }
 
   getData = () => {
@@ -203,18 +206,16 @@ export class GestionGeneralComponent implements OnInit {
     this.base64textString = btoa(binaryString);
   }
 
-  addImage = () => {
-    let tabla = 'images'
-    let data = {
-      tabla: tabla,
-      datos: [{
-        nombre: this.base64textString
+  addImage = (id: number) => {
+    console.log(id);
+    const tabla = 'imagenesprueba';
+    const data = {tabla: tabla, datos: [{id: this.imagen.id, nombre: this.base64textString
       }]
-    }
+    };
     this.http.post(environment.API_URL + 'post', data).subscribe(resultado => {
       console.log(resultado);
-      this.router.navigate(['gestion'])
-    })
+      this.router.navigate(['gestion']);
+    });
   }
 
   crearPDF() {
